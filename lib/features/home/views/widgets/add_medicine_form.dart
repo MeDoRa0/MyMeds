@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_meds/core/utils/styles.dart';
 import 'package:my_meds/features/home/views/widgets/custom_text_filed.dart';
-import 'package:my_meds/features/home/views/widgets/select_by_meal_checkbox.dart';
+import 'package:my_meds/features/home/views/widgets/select_by_meal_section.dart';
 
 class AddMedicineForm extends StatefulWidget {
   const AddMedicineForm({super.key});
@@ -11,7 +11,7 @@ class AddMedicineForm extends StatefulWidget {
 }
 
 class _AddMedicineFormState extends State<AddMedicineForm> {
-  bool switchbuttonvalue = false;
+  //bool switchbuttonMeal = false;
   //we creat this because we use form
   final GlobalKey<FormState> formKey = GlobalKey();
   //we use this to vaildate user input
@@ -65,18 +65,8 @@ class _AddMedicineFormState extends State<AddMedicineForm> {
               'select when will you take your medicine',
               style: Styles.textStyle16,
             ),
-            SwitchListTile(
-              title: const Text('select by meal'),
-              value: switchbuttonvalue,
-              onChanged: (bool value) {
-                setState(
-                  () {
-                    switchbuttonvalue = value;
-                  },
-                );
-              },
-            ),
-            if (switchbuttonvalue) const SelectByMealCheckBox(),
+            //select by meal section
+            const SelectByMeal(),
           ],
         ),
       ),
