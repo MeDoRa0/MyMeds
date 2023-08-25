@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_meds/core/utils/styles.dart';
-import 'package:my_meds/features/splash/home/views/widgets/custom_text_filed.dart';
+import 'package:my_meds/features/home/views/widgets/custom_text_filed.dart';
+import 'package:my_meds/features/home/views/widgets/select_by_meal_checkbox.dart';
 
 class AddMedicineForm extends StatefulWidget {
   const AddMedicineForm({super.key});
@@ -75,10 +76,7 @@ class _AddMedicineFormState extends State<AddMedicineForm> {
                 );
               },
             ),
-            if (switchbuttonvalue)
-              const ListTile(
-                title: Text('mohamed'),
-              )
+            if (switchbuttonvalue) const SelectByMealCheckBox(),
           ],
         ),
       ),

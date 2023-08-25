@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_meds/features/splash/home/views/widgets/custom_app_bar.dart';
+import 'package:my_meds/features/home/views/widgets/custom_app_bar.dart';
 
 class MedicineViewBody extends StatelessWidget {
   const MedicineViewBody({super.key});
