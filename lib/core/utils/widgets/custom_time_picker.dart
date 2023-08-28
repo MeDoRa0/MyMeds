@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_meds/core/utils/widgets/custom_drop_down_button.dart';
 
 class MyTimePicker extends StatefulWidget {
   const MyTimePicker({Key? key}) : super(key: key);
@@ -24,10 +25,26 @@ class _MyTimePickerState extends State<MyTimePicker> {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: const Text('Select time'),
-      subtitle: Text('Selected time is ${_time.format(context)}'),
-      onTap: () => _selectTime(context),
+    return Column(
+      children: [
+        ListTile(
+          title: const Text('Select time'),
+          subtitle: Text('Selected time is ${_time.format(context)}'),
+          onTap: () => _selectTime(context),
+        ),
+        const Padding(
+          padding: EdgeInsets.only(left: 16),
+          child: Row(
+            children: [
+              Text('Repeat every'),
+              SizedBox(
+                width: 64,
+              ),
+              CustomDropButton(),
+            ],
+          ),
+        )
+      ],
     );
   }
 }
