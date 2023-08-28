@@ -17,7 +17,6 @@ class SelectByMealCheckBox extends StatefulWidget {
 }
 
 class _SelectByMealCheckBoxState extends State<SelectByMealCheckBox> {
-  // Meal? _character = Meal.beforebreakfast;
   List<String> selectedMeal = [];
   @override
   Widget build(BuildContext context) {
