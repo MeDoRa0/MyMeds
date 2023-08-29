@@ -8,15 +8,17 @@ class AddMedicineView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            CustomAppBar(title: 'Add New Medicine'),
-            SizedBox(
-              height: 20,
-            ),
-            AddMedicineForm(),
-          ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              CustomAppBar(title: 'Add New Medicine'),
+              SizedBox(
+                height: 20,
+              ),
+              AddMedicineForm(),
+            ],
+          ),
         ),
       ),
     );
