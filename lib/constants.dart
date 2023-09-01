@@ -14,3 +14,4 @@ const kColorizeColors = [
 ];
 
 const kPrimaryColor = Colors.yellow;
+const kMedicineBox = 'medicine_box';
