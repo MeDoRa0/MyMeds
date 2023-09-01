@@ -6,8 +6,8 @@ import 'package:my_meds/core/utils/app_router.dart';
 void main() async {
   //to intiate hive
   await Hive.initFlutter();
-   //use await because openbox is future, medicine note box type of MedicineModel
-   await Hive.openBox(kMedicineBox);
+  //use await because openbox is future, medicine note box type of MedicineModel
+  await Hive.openBox(kMedicineBox);
   runApp(const MyMeds());
 }
 

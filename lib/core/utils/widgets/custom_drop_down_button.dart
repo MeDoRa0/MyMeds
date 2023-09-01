@@ -23,10 +23,10 @@ class _CustomDropButtonState extends State<CustomDropButton> {
       value: dropdownValue,
       icon: const Icon(Icons.arrow_downward),
       elevation: 16,
-      style: const TextStyle(color: Colors.greenAccent),
+      style: const TextStyle(color: Colors.yellowAccent),
       underline: Container(
         height: 2,
-        color: Colors.greenAccent,
+        color: Colors.yellowAccent,
       ),
       onChanged: (String? value) {
         // This is called when the user selects an item.

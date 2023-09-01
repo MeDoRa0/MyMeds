@@ -16,6 +16,7 @@ class _SelectByMealState extends State<SelectByMeal> {
     return Column(
       children: [
         SwitchListTile(
+          activeColor: Colors.yellowAccent,
           title: const Text('select by meal'),
           value: switchbuttonMeal,
           onChanged: (bool value) {

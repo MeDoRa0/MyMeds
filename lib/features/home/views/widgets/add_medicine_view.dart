@@ -27,7 +27,7 @@ class AddMedicineView extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const AddMedicineForm(),
+              AddMedicineForm(),
             ],
           ),
         ),

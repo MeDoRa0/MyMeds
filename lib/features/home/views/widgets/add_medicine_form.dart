@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:my_meds/core/utils/styles.dart';
+import 'package:my_meds/features/home/views/widgets/custom_add_button.dart';
 import 'package:my_meds/features/home/views/widgets/custom_text_filed.dart';
 import 'package:my_meds/features/home/views/widgets/select_by_meal_section.dart';
 import 'package:my_meds/features/home/views/widgets/select_by_time_section.dart';
 
 class AddMedicineForm extends StatefulWidget {
-  const AddMedicineForm({super.key});
+  AddMedicineForm({super.key});
 
   @override
   State<AddMedicineForm> createState() => _AddMedicineFormState();
 }
 
 class _AddMedicineFormState extends State<AddMedicineForm> {
-  //bool switchbuttonMeal = false;
   //we creat this because we use form
   final GlobalKey<FormState> formKey = GlobalKey();
   //we use this to vaildate user input
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
-  String? medicneName, medicineFor;
+  String? medicneName, illnessName;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -55,7 +55,7 @@ class _AddMedicineFormState extends State<AddMedicineForm> {
             ),
             CustomTextField(
               onSaved: (value) {
-                medicineFor = value;
+                illnessName = value;
               },
               hint: 'enter what does the medicine treat',
             ),
@@ -69,6 +69,19 @@ class _AddMedicineFormState extends State<AddMedicineForm> {
             //select by meal section
             const SelectByMeal(),
             const SelectByTime(),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              child: CustomAddButton(
+                onTap: () {
+                  if (formKey.currentState!.validate()) {
+                    formKey.currentState!.save();
+                  } else {
+                    autovalidateMode = AutovalidateMode.always;
+                    setState(() {});
+                  }
+                },
+              ),
+            ),
           ],
         ),
       ),
