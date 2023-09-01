@@ -7,24 +7,21 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Container(
-        // color: Colors.red,
-        child: Padding(
-          padding: const EdgeInsets.only(
-            top: 10,
-            left: 16,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 24,
-                ),
+      child: Padding(
+        padding: const EdgeInsets.only(
+          top: 10,
+          left: 16,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 24,
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

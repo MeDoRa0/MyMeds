@@ -6,7 +6,7 @@ class MedicineItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+      //padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
       decoration: BoxDecoration(
         color: Colors.blue,
         borderRadius: BorderRadius.circular(16),
@@ -14,48 +14,54 @@ class MedicineItem extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8),
         child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
-          ListTile(
-            title: const Text(
-              'take your medicine to treat illness',
-              style: TextStyle(color: Colors.black, fontSize: 20),
-            ),
-            subtitle: const Padding(
-              padding: EdgeInsets.only(top: 16),
-              child: Text(
-                'before meal',
-                style: TextStyle(color: Colors.black, fontSize: 16),
+          Padding(
+            padding: const EdgeInsets.only(top: 16),
+            child: ListTile(
+              title: const Text(
+                'take your medicine to treat illness',
+                style: TextStyle(color: Colors.black, fontSize: 20),
               ),
-            ),
-            trailing: FittedBox(
-              fit: BoxFit.none,
-              child: Column(
-                children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.delete,
-                      size: 25,
+              subtitle: const Padding(
+                padding: EdgeInsets.only(top: 30),
+                child: Text(
+                  'before meal',
+                  style: TextStyle(color: Colors.black, fontSize: 16),
+                ),
+              ),
+              trailing: FittedBox(
+                fit: BoxFit.none,
+                child: Column(
+                  children: [
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.delete,
+                        size: 25,
+                      ),
+                      color: Colors.black,
                     ),
-                    color: Colors.black,
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.edit,
-                      size: 25,
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.edit,
+                        size: 25,
+                      ),
+                      color: Colors.black,
                     ),
-                    color: Colors.black,
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
           const SizedBox(
             height: 8,
           ),
-          Text(
-            '8/31/2023',
-            style: TextStyle(color: Colors.black.withOpacity(0.5)),
+          Padding(
+            padding: const EdgeInsets.only(right: 16),
+            child: Text(
+              '8/31/2023',
+              style: TextStyle(color: Colors.black.withOpacity(0.5)),
+            ),
           ),
         ]),
       ),
