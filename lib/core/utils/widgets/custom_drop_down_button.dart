@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 const List<String> list = <String>[
+  '6 hours',
   '8 hours',
   '12 hours',
   'day',

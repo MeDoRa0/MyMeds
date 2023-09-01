@@ -8,7 +8,7 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        color: Colors.red,
+        // color: Colors.red,
         child: Padding(
           padding: const EdgeInsets.only(
             top: 10,
