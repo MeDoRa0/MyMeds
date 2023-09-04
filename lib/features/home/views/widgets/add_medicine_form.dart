@@ -32,7 +32,7 @@ class _AddMedicineFormState extends State<AddMedicineForm> {
           children: [
             const Text(
               'medicine name :',
-              style: Styles.textStyle16,
+              style: Styles.textStyle20,
             ),
             const SizedBox(
               height: 8,
@@ -48,7 +48,7 @@ class _AddMedicineFormState extends State<AddMedicineForm> {
             ),
             const Text(
               'medicine for :',
-              style: Styles.textStyle16,
+              style: Styles.textStyle20,
             ),
             const SizedBox(
               height: 8,
@@ -64,7 +64,7 @@ class _AddMedicineFormState extends State<AddMedicineForm> {
             ),
             const Text(
               'select when will you take your medicine',
-              style: Styles.textStyle16,
+              style: Styles.textStyle20,
             ),
             //select by meal section
             const SelectByMeal(),

@@ -11,4 +11,7 @@ abstract class Styles {
   static const textStyle16 = TextStyle(
     fontSize: 16,
   );
+  static const textStyle20 = TextStyle(
+    fontSize: 20,
+  );
 }
