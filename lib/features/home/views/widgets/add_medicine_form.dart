@@ -6,7 +6,7 @@ import 'package:my_meds/features/home/views/widgets/select_by_meal_section.dart'
 import 'package:my_meds/features/home/views/widgets/select_by_time_section.dart';
 
 class AddMedicineForm extends StatefulWidget {
-  AddMedicineForm({super.key});
+  const AddMedicineForm({super.key});
 
   @override
   State<AddMedicineForm> createState() => _AddMedicineFormState();

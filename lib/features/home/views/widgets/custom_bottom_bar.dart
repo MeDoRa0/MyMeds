@@ -7,8 +7,9 @@ class CustomBottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 50,
+    return Container(
+      decoration: BoxDecoration(
+          color: Colors.green, borderRadius: BorderRadius.circular(8)),
       child: Row(
         children: [
           IconButton(

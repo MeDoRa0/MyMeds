@@ -1,9 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:my_meds/constants.dart';
 
 class CustomAddButton extends StatelessWidget {
-   const CustomAddButton({super.key, this.onTap, this.isLoading = false});
+  const CustomAddButton({super.key, this.onTap, this.isLoading = false});
   //i copy this code from onTap info
   final void Function()? onTap;
   //to show loading icon on button
@@ -23,7 +22,7 @@ class CustomAddButton extends StatelessWidget {
         ),
         child: Center(
           child: isLoading
-          //sizsedbox to adjust loading dimanions
+              //sizsedbox to adjust loading dimanions
               ? const SizedBox(
                   height: 25,
                   width: 25,
