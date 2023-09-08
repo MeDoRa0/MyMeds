@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_meds/features/home/views/widgets/user_profile_body.dart';
+import 'package:my_meds/features/home/presentation/views/widgets/user_profile_body.dart';
 
 class UserProfile extends StatelessWidget {
   const UserProfile({super.key});

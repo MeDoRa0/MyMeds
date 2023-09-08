@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:my_meds/features/home/views/widgets/add_medicine_form.dart';
-import 'package:my_meds/features/home/views/widgets/custom_app_bar.dart';
+import 'package:my_meds/features/home/presentation/views/widgets/add_medicine_form.dart';
+import 'package:my_meds/features/home/presentation/views/widgets/custom_app_bar.dart';
 
 class AddMedicineView extends StatelessWidget {
   const AddMedicineView({super.key});
@@ -27,7 +27,7 @@ class AddMedicineView extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              AddMedicineForm(),
+              const AddMedicineForm(),
             ],
           ),
         ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:my_meds/features/home/views/widgets/custom_app_bar.dart';
-import 'package:my_meds/features/home/views/widgets/user_profile_form.dart';
+import 'package:my_meds/features/home/presentation/views/widgets/custom_app_bar.dart';
+import 'package:my_meds/features/home/presentation/views/widgets/user_profile_form.dart';
 
 class UserProfileBody extends StatelessWidget {
   const UserProfileBody({super.key});

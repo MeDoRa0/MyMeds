@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_meds/features/home/views/widgets/medicine_item.dart';
+import 'package:my_meds/features/home/presentation/views/widgets/medicine_item.dart';
 
 class MedicineListView extends StatelessWidget {
   const MedicineListView({super.key});

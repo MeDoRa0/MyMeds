@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_meds/core/utils/styles.dart';
-import 'package:my_meds/core/utils/widgets/custom_time_picker.dart';
 
 enum Meal {
   beforebreakfast,
@@ -144,43 +142,6 @@ class _SelectByMealCheckBoxState extends State<SelectByMealCheckBox> {
               },
             );
           },
-        ),
-      ],
-    );
-  }
-}
-
-class MealTime extends StatefulWidget {
-  const MealTime({super.key});
-
-  @override
-  State<MealTime> createState() => _MealTimeState();
-}
-
-class _MealTimeState extends State<MealTime> {
-  @override
-  Widget build(BuildContext context) {
-    return const Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'when is your meal time?',
-          style: Styles.textStyle16,
-        ),
-        SizedBox(
-          height: 16,
-        ),
-        Row(
-          children: [
-            Text(
-              'breakfast',
-              style: Styles.textStyle16,
-            ),
-            SizedBox(
-              width: 8,
-            ),
-            MyTimePicker(),
-          ],
         ),
       ],
     );

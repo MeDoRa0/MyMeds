@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_meds/features/home/views/widgets/custom_app_bar.dart';
-import 'package:my_meds/features/home/views/widgets/custom_bottom_bar.dart';
+import 'package:my_meds/features/home/presentation/views/widgets/custom_app_bar.dart';
+import 'package:my_meds/features/home/presentation/views/widgets/custom_bottom_bar.dart';
 import 'medicine_list_view.dart';
 
 class MedicineViewBody extends StatelessWidget {

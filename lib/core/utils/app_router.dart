@@ -1,7 +1,7 @@
 import 'package:go_router/go_router.dart';
-import 'package:my_meds/features/home/views/home_view.dart';
-import 'package:my_meds/features/home/views/widgets/add_medicine_view.dart';
-import 'package:my_meds/features/home/views/widgets/user_profile.dart';
+import 'package:my_meds/features/home/presentation/views/home_view.dart';
+import 'package:my_meds/features/home/presentation/views/widgets/add_medicine_view.dart';
+import 'package:my_meds/features/home/presentation/views/widgets/user_profile.dart';
 import 'package:my_meds/features/splash/splash_view.dart';
 
 abstract class AppRouter {

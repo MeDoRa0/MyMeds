@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:my_meds/core/utils/styles.dart';
-import 'package:my_meds/features/home/views/widgets/custom_add_button.dart';
-import 'package:my_meds/features/home/views/widgets/custom_text_filed.dart';
-import 'package:my_meds/features/home/views/widgets/select_by_meal_section.dart';
-import 'package:my_meds/features/home/views/widgets/select_by_time_section.dart';
+import 'package:my_meds/features/home/presentation/views/widgets/custom_add_button.dart';
+import 'package:my_meds/features/home/presentation/views/widgets/custom_text_filed.dart';
+import 'package:my_meds/features/home/presentation/views/widgets/select_by_meal_section.dart';
+import 'package:my_meds/features/home/presentation/views/widgets/select_by_time_section.dart';
 
 class AddMedicineForm extends StatefulWidget {
   const AddMedicineForm({super.key});
