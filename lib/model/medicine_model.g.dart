@@ -17,18 +17,19 @@ class MedicineModelAdapter extends TypeAdapter<MedicineModel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return MedicineModel(
-      fields[2] as String,
       medicineName: fields[0] as String,
       illnessName: fields[1] as String,
+      mealTime: fields[2] as String,
       date: fields[3] as String,
-      time: fields[4] as String,
+      userName: fields[4] as String,
+      medicineTime: fields[5] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, MedicineModel obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.medicineName)
       ..writeByte(1)
@@ -38,7 +39,9 @@ class MedicineModelAdapter extends TypeAdapter<MedicineModel> {
       ..writeByte(3)
       ..write(obj.date)
       ..writeByte(4)
-      ..write(obj.time);
+      ..write(obj.userName)
+      ..writeByte(5)
+      ..write(obj.medicineTime);
   }
 
   @override
