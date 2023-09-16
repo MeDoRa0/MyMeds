@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:meta/meta.dart';
 import 'package:my_meds/constants.dart';
 import 'package:my_meds/core/model/medicine_model.dart';

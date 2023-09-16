@@ -1,23 +1,26 @@
 import 'package:hive_flutter/adapters.dart';
 //this fill will be generated to creat file adabter for this model
 part 'medicine_model.g.dart';
+
 // determine type id for the object in hive database
-@HiveType(typeId:0)
+@HiveType(typeId: 0)
 // we use hiveobject to make the model able to store in hive
-class MedicineModel  extends HiveObject{
+class MedicineModel extends HiveObject {
   //give each field a hivefield id
   @HiveField(0)
-  final String medicineName;
+  String medicineName;
   @HiveField(1)
-  final String illnessName;
+  String illnessName;
   @HiveField(2)
-  final String mealTime;
+  dynamic mealTime;
   @HiveField(3)
-  final String date;
+  String date;
   @HiveField(4)
-  final String userName;
+  String userName;
   @HiveField(5)
-  final String medicineTime;
+  dynamic medicineTime;
+  @HiveField(6)
+  dynamic selectedMeal;
 
   MedicineModel(
       {required this.medicineName,
@@ -25,8 +28,9 @@ class MedicineModel  extends HiveObject{
       required this.mealTime,
       required this.date,
       required this.userName,
-      required this.medicineTime});
+      required this.medicineTime,
+      required this.selectedMeal});
 }
- //type this command in terminal after finsh this file
+ //type this command in terminal after finish this file
  // flutter packages pub run build_runner build 
  // press enter

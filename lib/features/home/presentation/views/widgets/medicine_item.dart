@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_meds/core/model/medicine_model.dart';
+import 'package:my_meds/features/home/presentation/manager/medicine_cubit/medicine_cubit.dart';
 
 class MedicineItem extends StatelessWidget {
-  const MedicineItem({super.key});
+  MedicineItem({super.key, required this.medicine});
+  final MedicineModel medicine;
 
   @override
   Widget build(BuildContext context) {
@@ -17,15 +21,23 @@ class MedicineItem extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 16),
             child: ListTile(
-              title: const Text(
-                'take your medicine to treat illness',
-                style: TextStyle(color: Colors.black, fontSize: 20),
+              title: Text(
+                medicine.medicineName,
+                style: const TextStyle(color: Colors.black, fontSize: 20),
               ),
-              subtitle: const Padding(
-                padding: EdgeInsets.only(top: 30),
-                child: Text(
-                  'before meal',
-                  style: TextStyle(color: Colors.black, fontSize: 16),
+              subtitle: Padding(
+                padding: const EdgeInsets.only(top: 30),
+                child: Column(
+                  children: [
+                    Text(
+                      medicine.illnessName,
+                      style: const TextStyle(color: Colors.black, fontSize: 16),
+                    ),
+                    /* Text(
+                      medicine.selectedMeal as String,
+                      style: Styles.textStyle16,
+                    ),*/
+                  ],
                 ),
               ),
               trailing: FittedBox(
@@ -33,7 +45,13 @@ class MedicineItem extends StatelessWidget {
                 child: Column(
                   children: [
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        //this will delete note
+                        medicine.delete();
+                        //this will refresh the list after delete
+                        BlocProvider.of<MedicineCubit>(context)
+                            .fetchAllMedicine();
+                      },
                       icon: const Icon(
                         Icons.delete,
                         size: 25,
@@ -59,7 +77,7 @@ class MedicineItem extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(right: 16),
             child: Text(
-              '8/31/2023',
+              medicine.date,
               style: TextStyle(color: Colors.black.withOpacity(0.5)),
             ),
           ),

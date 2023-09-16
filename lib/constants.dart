@@ -14,4 +14,5 @@ const kColorizeColors = [
 ];
 
 const kPrimaryColor = Colors.yellow;
+//to use it in Hive.openBox(); in main
 const kMedicineBox = 'medicine_box';

@@ -10,11 +10,11 @@ class MedicineCubit extends Cubit<MedicineState> {
   MedicineCubit() : super(MedicineInitial());
   // list of medicinemodel called medicine
   List<MedicineModel>? medicine;
-  // this method to fetch all medicines and shoe them
-  fetchAllMedicine() async {
+  // this method to fetch all medicines and show them
+   fetchAllMedicine() async {
     //variable medicineBox that recive from kMedicineBox
     var medicineBox = Hive.box<MedicineModel>(kMedicineBox);
-    //list if medcinemodel
+    //list of medcinemodel
     medicine = medicineBox.values.toList();
     emit(MedicineSuccess());
   }
