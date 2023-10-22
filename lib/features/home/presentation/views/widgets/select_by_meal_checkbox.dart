@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../manager/add_medicine_cubit/add_medicine_cubit.dart';
 
 enum Meal {
   beforebreakfast,
@@ -40,14 +43,21 @@ class _SelectByMealCheckBoxState extends State<SelectByMealCheckBox> {
           controlAffinity: ListTileControlAffinity.leading,
           checkColor: Colors.black,
           fillColor: MaterialStateProperty.resolveWith(getColor),
-          value: selectedMeal.contains('before breakfast'),
+          //this will provide the selected meal to AddMedicineCubit
+          value: BlocProvider.of<AddMedicineCubit>(context)
+              .selectedMeal
+              .contains('before breakfast'),
           onChanged: (bool? value) {
             setState(
               () {
                 if (value!) {
-                  selectedMeal.add('before breakfast');
+                  BlocProvider.of<AddMedicineCubit>(context)
+                      .selectedMeal
+                      .add('before breakfast');
                 } else {
-                  selectedMeal.remove('before breakfast');
+                  BlocProvider.of<AddMedicineCubit>(context)
+                      .selectedMeal
+                      .remove('before breakfast');
                 }
               },
             );
@@ -58,14 +68,21 @@ class _SelectByMealCheckBoxState extends State<SelectByMealCheckBox> {
           controlAffinity: ListTileControlAffinity.leading,
           checkColor: Colors.black,
           fillColor: MaterialStateProperty.resolveWith(getColor),
-          value: selectedMeal.contains('after breakfast'),
+          //this will provide the selected meal to AddMedicineCubit
+          value: BlocProvider.of<AddMedicineCubit>(context)
+              .selectedMeal
+              .contains('after breakfast'),
           onChanged: (bool? value) {
             setState(
               () {
                 if (value!) {
-                  selectedMeal.add('after breakfast');
+                  BlocProvider.of<AddMedicineCubit>(context)
+                      .selectedMeal
+                      .add('after breakfast');
                 } else {
-                  selectedMeal.remove('after breakfast');
+                  BlocProvider.of<AddMedicineCubit>(context)
+                      .selectedMeal
+                      .remove('after breakfast');
                 }
               },
             );
@@ -76,14 +93,20 @@ class _SelectByMealCheckBoxState extends State<SelectByMealCheckBox> {
           controlAffinity: ListTileControlAffinity.leading,
           checkColor: Colors.black,
           fillColor: MaterialStateProperty.resolveWith(getColor),
-          value: selectedMeal.contains('before lunch'),
+          value: BlocProvider.of<AddMedicineCubit>(context)
+              .selectedMeal
+              .contains('before lunch'),
           onChanged: (bool? value) {
             setState(
               () {
                 if (value!) {
-                  selectedMeal.add('before lunch');
+                  BlocProvider.of<AddMedicineCubit>(context)
+                      .selectedMeal
+                      .add('before lunch');
                 } else {
-                  selectedMeal.remove('before lunch');
+                  BlocProvider.of<AddMedicineCubit>(context)
+                      .selectedMeal
+                      .remove('before lunch');
                 }
               },
             );
@@ -94,14 +117,20 @@ class _SelectByMealCheckBoxState extends State<SelectByMealCheckBox> {
           controlAffinity: ListTileControlAffinity.leading,
           checkColor: Colors.black,
           fillColor: MaterialStateProperty.resolveWith(getColor),
-          value: selectedMeal.contains('after lunch'),
+          value: BlocProvider.of<AddMedicineCubit>(context)
+              .selectedMeal
+              .contains('after lunch'),
           onChanged: (bool? value) {
             setState(
               () {
                 if (value!) {
-                  selectedMeal.add('after lunch');
+                  BlocProvider.of<AddMedicineCubit>(context)
+                      .selectedMeal
+                      .add('after lunch');
                 } else {
-                  selectedMeal.remove('after lunch');
+                  BlocProvider.of<AddMedicineCubit>(context)
+                      .selectedMeal
+                      .remove('after lunch');
                 }
               },
             );
@@ -112,14 +141,20 @@ class _SelectByMealCheckBoxState extends State<SelectByMealCheckBox> {
           controlAffinity: ListTileControlAffinity.leading,
           checkColor: Colors.black,
           fillColor: MaterialStateProperty.resolveWith(getColor),
-          value: selectedMeal.contains('before dinner'),
+          value: BlocProvider.of<AddMedicineCubit>(context)
+              .selectedMeal
+              .contains('before dinner'),
           onChanged: (bool? value) {
             setState(
               () {
                 if (value!) {
-                  selectedMeal.add('before dinner');
+                  BlocProvider.of<AddMedicineCubit>(context)
+                      .selectedMeal
+                      .add('before dinner');
                 } else {
-                  selectedMeal.remove('before dinner');
+                  BlocProvider.of<AddMedicineCubit>(context)
+                      .selectedMeal
+                      .remove('before dinner');
                 }
               },
             );
@@ -130,14 +165,20 @@ class _SelectByMealCheckBoxState extends State<SelectByMealCheckBox> {
           controlAffinity: ListTileControlAffinity.leading,
           checkColor: Colors.black,
           fillColor: MaterialStateProperty.resolveWith(getColor),
-          value: selectedMeal.contains('after dinner'),
+          value: BlocProvider.of<AddMedicineCubit>(context)
+              .selectedMeal
+              .contains('after dinner'),
           onChanged: (bool? value) {
             setState(
               () {
                 if (value!) {
-                  selectedMeal.add('after dinner');
+                  BlocProvider.of<AddMedicineCubit>(context)
+                      .selectedMeal
+                      .add('after dinner');
                 } else {
-                  selectedMeal.remove('after dinner');
+                  BlocProvider.of<AddMedicineCubit>(context)
+                      .selectedMeal
+                      .remove('after dinner');
                 }
               },
             );

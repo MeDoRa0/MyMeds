@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_meds/core/model/medicine_model.dart';
+import 'package:my_meds/core/utils/styles.dart';
 import 'package:my_meds/features/home/presentation/manager/medicine_cubit/medicine_cubit.dart';
 
 class MedicineItem extends StatelessWidget {
@@ -22,22 +23,35 @@ class MedicineItem extends StatelessWidget {
             padding: const EdgeInsets.only(top: 16),
             child: ListTile(
               title: Text(
-                medicine.medicineName,
+                " username dont forget to take ${medicine.medicineName}",
                 style: const TextStyle(color: Colors.black, fontSize: 20),
               ),
               subtitle: Padding(
-                padding: const EdgeInsets.only(top: 30),
+                padding: const EdgeInsets.only(top: 16),
                 child: Column(
-                  children: [
-                    Text(
-                      medicine.illnessName,
-                      style: const TextStyle(color: Colors.black, fontSize: 16),
-                    ),
-                    /* Text(
-                      medicine.selectedMeal as String,
-                      style: Styles.textStyle16,
-                    ),*/
-                  ],
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 16),
+                          child: Text(
+                            " to treat ${medicine.illnessName}",
+                            style: const TextStyle(
+                                color: Colors.black, fontSize: 20),
+                          ),
+                        ),
+                      ] +
+                      [
+                        if (medicine.selectedMeal != null)
+                          Column(
+                            children: [
+                              //for (var element in medicine.selectedMeal)
+                              Text(
+                                "take it at following time:\n ${medicine.selectedMeal.join("\n  ")}",
+                                style: Styles.textStyle18,
+                              ),
+                            ],
+                          ),
+                      ],
                 ),
               ),
               trailing: FittedBox(

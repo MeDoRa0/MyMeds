@@ -7,7 +7,9 @@ import 'package:my_meds/core/model/medicine_model.dart';
 part 'add_medicine_state.dart';
 
 class AddMedicineCubit extends Cubit<AddMedicineState> {
+
   AddMedicineCubit() : super(AddMedicineInitial());
+  List  selectedMeal=[];
   //creat addMedicine method that recive medicinemodel
   addMedicine(MedicineModel medicine) async {
     emit(AddMedicineLoading());

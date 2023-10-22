@@ -24,6 +24,10 @@ class _AddMedicineFormState extends State<AddMedicineForm> {
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   String? medicneName, illnessName, selectedMeal, date, medicineTime;
 
+  showSelectedMeal(selectedMealValue) {
+    selectedMeal = selectedMealValue;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -73,7 +77,7 @@ class _AddMedicineFormState extends State<AddMedicineForm> {
               style: Styles.textStyle20,
             ),
             //select by meal section
-            const SelectByMeal(),
+            SelectByMeal(selectedMeal: showSelectedMeal),
             const SelectByTime(),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16),
@@ -98,7 +102,11 @@ class _AddMedicineFormState extends State<AddMedicineForm> {
                           illnessName: illnessName!,
                           date: formatedCurrentDate,
                           medicineTime: medicineTime,
-                          selectedMeal: selectedMeal, mealTime: '', userName: '',
+                          selectedMeal:
+                              BlocProvider.of<AddMedicineCubit>(context)
+                                  .selectedMeal,
+                          mealTime: '',
+                          userName: '',
                         );
                         BlocProvider.of<AddMedicineCubit>(context)
                             .addMedicine(medicinModel);
