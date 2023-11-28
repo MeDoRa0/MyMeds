@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/intl.dart';
 import 'package:my_meds/core/model/medicine_model.dart';
 import 'package:my_meds/core/utils/styles.dart';
 import 'package:my_meds/features/home/presentation/manager/medicine_cubit/medicine_cubit.dart';
 
 class MedicineItem extends StatelessWidget {
-   MedicineItem({super.key, required this.medicine});
- //final DateFormat dateFormat = DateFormat.Hms();
+  MedicineItem({super.key, required this.medicine});
+  //final DateFormat dateFormat = DateFormat.Hms();
   final MedicineModel medicine;
 
   @override
@@ -47,7 +46,7 @@ class MedicineItem extends StatelessWidget {
                         Column(
                           children: [
                             Text(
-                              "take it at following time:\n ${medicine.selectedMeal.join("\n  ")},${medicine.medicineTime}",
+                              "take it at following time:\n ${medicine.selectedMeal.join("\n  ")}${medicine.medicineTime}",
                               style: Styles.textStyle18,
                             ),
                           ],

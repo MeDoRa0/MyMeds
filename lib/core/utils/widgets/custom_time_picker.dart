@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-// import 'package:intl/intl.dart';
-import 'package:my_meds/core/model/medicine_model.dart';
 import 'package:my_meds/features/home/presentation/manager/add_medicine_cubit/add_medicine_cubit.dart';
 
 class TimePicker extends StatefulWidget {
@@ -58,7 +56,7 @@ class _TimePickerState extends State<TimePicker> {
                   selectedTime = time;
                   // addMedicineCubit.medicineTime;
                   BlocProvider.of<AddMedicineCubit>(context).medicineTime =
-                      time.toString();
+                      time?.format(context);
                 });
               },
             ),
