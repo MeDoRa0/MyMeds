@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:meta/meta.dart';
 import 'package:my_meds/constants.dart';
@@ -9,8 +10,7 @@ part 'add_medicine_state.dart';
 class AddMedicineCubit extends Cubit<AddMedicineState> {
   AddMedicineCubit() : super(AddMedicineInitial());
   List selectedMeal = [];
-  List medicineTime = [];
-  void setTime(AddMedicineState time) => emit(time);
+  String? medicineTime;
 
   //creat addMedicine method that recive medicinemodel
   addMedicine(MedicineModel medicine) async {

@@ -19,7 +19,7 @@ class AddMedicineForm extends StatefulWidget {
 
 class _AddMedicineFormState extends State<AddMedicineForm> {
   //we creat this because we use form
-  final GlobalKey<FormState> formKey = GlobalKey();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   //we use this to vaildate user input
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   String? medicneName, illnessName, selectedMeal, date, medicineTime;
@@ -82,7 +82,9 @@ class _AddMedicineFormState extends State<AddMedicineForm> {
             ),
             //select by meal section
             SelectByMeal(selectedMeal: showSelectedMeal),
+            //select by time section
             SelectByTime(medicineTime: showSelectedTime),
+            // the Add button
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16),
               child: BlocBuilder<AddMedicineCubit, AddMedicineState>(
@@ -105,12 +107,12 @@ class _AddMedicineFormState extends State<AddMedicineForm> {
                           medicineName: medicneName!,
                           illnessName: illnessName!,
                           date: formatedCurrentDate,
-                          medicineTime:
-                              BlocProvider.of<AddMedicineCubit>(context)
-                                  .medicineTime,
                           selectedMeal:
                               BlocProvider.of<AddMedicineCubit>(context)
                                   .selectedMeal,
+                          medicineTime:
+                              BlocProvider.of<AddMedicineCubit>(context)
+                                  .medicineTime,
                           mealTime: '',
                           userName: '',
                         );
