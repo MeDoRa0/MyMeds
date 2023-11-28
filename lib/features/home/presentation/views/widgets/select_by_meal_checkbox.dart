@@ -3,14 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../manager/add_medicine_cubit/add_medicine_cubit.dart';
 
-enum Meal {
+/*enum Meal {
   beforebreakfast,
   afterbreackfast,
   beforelunch,
   afterlunsh,
   beforedinner,
   afterdinner
-}
+}*/
 
 class SelectByMealCheckBox extends StatefulWidget {
   const SelectByMealCheckBox({super.key});
@@ -20,7 +20,7 @@ class SelectByMealCheckBox extends StatefulWidget {
 }
 
 class _SelectByMealCheckBoxState extends State<SelectByMealCheckBox> {
-  List<String> selectedMeal = [];
+  //List<String> selectedMeal = [];
   @override
   Widget build(BuildContext context) {
     Color getColor(Set<MaterialState> states) {

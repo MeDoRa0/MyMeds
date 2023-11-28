@@ -28,6 +28,10 @@ class _AddMedicineFormState extends State<AddMedicineForm> {
     selectedMeal = selectedMealValue;
   }
 
+  showSelectedTime(selectedTimeValue) {
+    medicineTime = selectedTimeValue;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -78,7 +82,7 @@ class _AddMedicineFormState extends State<AddMedicineForm> {
             ),
             //select by meal section
             SelectByMeal(selectedMeal: showSelectedMeal),
-            const SelectByTime(),
+            SelectByTime(medicineTime: showSelectedTime),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16),
               child: BlocBuilder<AddMedicineCubit, AddMedicineState>(
@@ -96,12 +100,14 @@ class _AddMedicineFormState extends State<AddMedicineForm> {
                         var formatedCurrentDate =
                             DateFormat.yMd().format(currentDate);
                         //this if i want to creat format  DateFormat('dd/mm/yyyy').format(currentDate);
-                        //creat model then save model in medicine so we can creat new note
+                        //creat model then save model in medicine so we can creat new medicine
                         var medicinModel = MedicineModel(
                           medicineName: medicneName!,
                           illnessName: illnessName!,
                           date: formatedCurrentDate,
-                          medicineTime: medicineTime,
+                          medicineTime:
+                              BlocProvider.of<AddMedicineCubit>(context)
+                                  .medicineTime,
                           selectedMeal:
                               BlocProvider.of<AddMedicineCubit>(context)
                                   .selectedMeal,

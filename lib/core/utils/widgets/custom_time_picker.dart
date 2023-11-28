@@ -1,49 +1,63 @@
 import 'package:flutter/material.dart';
-import 'package:my_meds/core/utils/widgets/custom_drop_down_button.dart';
+import 'package:my_meds/features/home/presentation/manager/add_medicine_cubit/add_medicine_cubit.dart';
 
-class MyTimePicker extends StatefulWidget {
-  const MyTimePicker({Key? key}) : super(key: key);
+class TimePicker extends StatefulWidget {
+  const TimePicker({super.key});
 
   @override
-  _MyTimePickerState createState() => _MyTimePickerState();
+  State<TimePicker> createState() => _TimePickerState();
 }
 
-class _MyTimePickerState extends State<MyTimePicker> {
-  TimeOfDay _time = TimeOfDay.now();
-
-  Future<void> _selectTime(BuildContext context) async {
-    final TimeOfDay? newTime = await showTimePicker(
-      context: context,
-      initialTime: _time,
-    );
-    if (newTime != null) {
-      setState(() {
-        _time = newTime;
-      });
-    }
-  }
-
+class _TimePickerState extends State<TimePicker> {
+  final addMedicineCubit = AddMedicineCubit();
+  List<String> medicineTime = [];
+  TimeOfDay? selectedTime;
+  TimePickerEntryMode entryMode = TimePickerEntryMode.dial;
+  Orientation? orientation;
+  TextDirection textDirection = TextDirection.ltr;
+  MaterialTapTargetSize tapTargetSize = MaterialTapTargetSize.padded;
+  bool use24HourTime = false;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ListTile(
-          title: const Text('Select time'),
-          subtitle: Text('Selected time is ${_time.format(context)}'),
-          onTap: () => _selectTime(context),
-        ),
-        const Padding(
-          padding: EdgeInsets.only(left: 16),
-          child: Row(
-            children: [
-              Text('Repeat every'),
-              SizedBox(
-                width: 64,
-              ),
-              CustomDropButton(),
-            ],
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: ElevatedButton(
+            child: const Text('Open time picker'),
+            onPressed: () async {
+              final TimeOfDay? time = await showTimePicker(
+                context: context,
+                initialTime: selectedTime ?? TimeOfDay.now(),
+                initialEntryMode: entryMode,
+                orientation: orientation,
+                builder: (BuildContext context, Widget? child) {
+                  return Theme(
+                    data: Theme.of(context).copyWith(
+                      materialTapTargetSize: tapTargetSize,
+                    ),
+                    child: Directionality(
+                      textDirection: textDirection,
+                      child: MediaQuery(
+                        data: MediaQuery.of(context).copyWith(
+                          alwaysUse24HourFormat: use24HourTime,
+                        ),
+                        child: child!,
+                      ),
+                    ),
+                  );
+                },
+              );
+              setState(() {
+                selectedTime = time;
+                addMedicineCubit.medicineTime;
+              });
+            },
           ),
-        )
+        ),
+        if (selectedTime != null)
+          Text('Selected time: ${selectedTime!.format(context)}'),
       ],
     );
   }

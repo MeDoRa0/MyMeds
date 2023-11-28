@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:my_meds/core/utils/widgets/custom_time_picker.dart';
 
 class SelectByTime extends StatefulWidget {
-  const SelectByTime({super.key});
+  const SelectByTime({super.key, required this.medicineTime});
+  final dynamic Function(dynamic) medicineTime;
 
   @override
   State<SelectByTime> createState() => _SelectByTimeState();
@@ -26,7 +27,7 @@ class _SelectByTimeState extends State<SelectByTime> {
             );
           },
         ),
-        if (switchbuttonTime) const MyTimePicker(),
+        if (switchbuttonTime) const TimePicker(),
       ],
     );
   }
