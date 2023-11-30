@@ -5,8 +5,8 @@ import 'package:my_meds/core/utils/styles.dart';
 import 'package:my_meds/features/home/presentation/manager/medicine_cubit/medicine_cubit.dart';
 
 class MedicineItem extends StatelessWidget {
-  MedicineItem({super.key, required this.medicine});
-  //final DateFormat dateFormat = DateFormat.Hms();
+  const MedicineItem({super.key, required this.medicine});
+
   final MedicineModel medicine;
 
   @override
@@ -42,7 +42,6 @@ class MedicineItem extends StatelessWidget {
                         ),
                       ] +
                       [
-                        //if (medicine.selectedMeal != null)
                         Column(
                           children: [
                             Text(

@@ -11,7 +11,6 @@ class TimePicker extends StatefulWidget {
 
 class _TimePickerState extends State<TimePicker> {
   final addMedicineCubit = AddMedicineCubit();
-  List<String> medicineTime = [];
   TimeOfDay? selectedTime;
   TimePickerEntryMode entryMode = TimePickerEntryMode.dial;
   Orientation? orientation;
@@ -54,7 +53,6 @@ class _TimePickerState extends State<TimePicker> {
                 );
                 setState(() {
                   selectedTime = time;
-                  // addMedicineCubit.medicineTime;
                   BlocProvider.of<AddMedicineCubit>(context).medicineTime =
                       time?.format(context);
                 });
